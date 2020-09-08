@@ -1,0 +1,6 @@
+APUNTES:
+
+
+helpers
+los helpers nos ayudan a no tener todas las funciones en un componente, porque visualmente no es estetico. Lo mejor es extraer las funciones 
+-son funciones que hacen un trabajo en especifico
