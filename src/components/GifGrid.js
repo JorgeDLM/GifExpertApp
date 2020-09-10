@@ -3,7 +3,7 @@ import GifGridItem from './GifGridItem'
 // import { getGifs } from '../helpers/getGifs'
 import { useFetchGifs } from '../hooks/useFetchGifs'
 
-export const GifGrid = ({categorias, cantidad, ultimaCategoria}) => {
+export const GifGrid = ({categorias, cantidad, ultimaCategoria, pruebas}) => {
 
 
     // Cuando esto se ejecuta lo que hace es que hace que se vuelva a ejecutar el getGifs cada que haya un cambio, esto es porque hay un cambio en este nivel en el componente
@@ -29,6 +29,7 @@ export const GifGrid = ({categorias, cantidad, ultimaCategoria}) => {
     // lo pase arriba a useEffect para que no se ejecute el codigo cada vez que haya un cambio en el componente
     return (
             <>
+            {pruebas && <h2>{images.length}</h2>}
                 <div style={{textAlign: 'center', marginBottom: '4px', fontSize: '25px', fontWeight: 'bolder'}}>{categorias}</div>
                 {loading && <p className="animate__flash">
                     Cargando...

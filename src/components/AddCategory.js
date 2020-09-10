@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-export const AddCategory = ({categorias, setCategorias}) =>{
+export const AddCategory = ({categorias, setCategorias, pruebas}) =>{
 
     // Hooks:
     const [inputValue, setInputValue] = useState('')
@@ -11,7 +12,9 @@ export const AddCategory = ({categorias, setCategorias}) =>{
     const convertirMayusculas = (e) => e.charAt(0) === ' ' ? e.charAt(1).toUpperCase() + e.toLowerCase().slice(1) : e.charAt(0).toUpperCase() + e.toLowerCase().slice(1)
 
     const handleAgregar = () => {
-        setCategorias([convertirMayusculas(inputValue), ...categorias])
+        // funciona sin que ponga categorias => pero como en las pruebas tengo q verifique q es funcion lo pongo asi:
+        setCategorias( categorias => [convertirMayusculas(inputValue), ...categorias]);
+        setInputValue('')
     }
 
     const sinCambio = inputValue !== '' && inputValue !== ' '
@@ -25,7 +28,8 @@ export const AddCategory = ({categorias, setCategorias}) =>{
     const handleSubmit = (e) => {
         // esto lo que hace es evitar el funcionamiento por defecto del form:
         e.preventDefault();
-
+        
+        // pruebas && console.log('submit activado', inputValue)
         // utilizando el form al picar enter en el input se activa el submit y me evito este codigo:
         // e => (e.keyCode === 13)
     }
@@ -34,25 +38,28 @@ export const AddCategory = ({categorias, setCategorias}) =>{
     const handleChange = (e) => {
         // manejandoDobleEspacio
         setInputValue(e.target.value.replace(/ +(?= )/g,''))
+        // pruebas && console.log( 'handleChange llamado')
     }
     
     const agregarCategoria = () => {
         (sinCambioTextoRepetido) && handleAgregar(); 
         (sinCambioTextoRepetido) && setMostrarAlerta(false); 
         (sinCambio && !contieneTextoRepetido) && setCategoriaRepetida(false); 
-        (sinCambio && contieneTextoRepetido) && setCategoriaRepetida(true)
+        (sinCambio && contieneTextoRepetido) && setCategoriaRepetida(true);
+        // pruebas && console.log('Se agregaron gifs')
     }
-    
+
     // styles
     const boton = {backgroundColor: 'white', borderRadius: '10px', paddingBottom: '2px', marginLeft: '5px'}
     const alerta = {fontSize: '12px', paddingTop: '3px',}
-    
+
     return(
         <>
+            {pruebas && <h2>{inputValue}</h2>}
             <form onSubmit={handleSubmit}>
                 <input 
                     maxLength={20} 
-                    type="text" 
+                    type="text"
                     placeholder="Buscar GIF's" 
                     value={convertirMayusculas(inputValue)} 
                     // ya no es necesario porque esta el form onEnter:
@@ -64,17 +71,20 @@ export const AddCategory = ({categorias, setCategorias}) =>{
 
            {(!mostrarAlerta && categoriaRepetida) && 
                 <div style={{...alerta, color: 'green'}}>
-                    Categoria {categorias[categorias.length -1 ]} creada con exito!
+                    Gifs de {categorias[categorias.length -1 ]} agregados con exito!
                 </div>
            }
 
             {!(categoriaRepetida) && 
-                <div style={{...alerta, color: 'red'}}>Categoria repetida.</div>
+                <div style={{...alerta, color: 'red'}}>Gifs repetidos.</div>
             }
         </>
     )
 }
 
+AddCategory.propTypes = {
+    setCategorias: PropTypes.func.isRequired
+}
 
 
 export default AddCategory;

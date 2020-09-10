@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddCategory/> debe de mostrarse correctamente 1`] = `
+<Fragment>
+  <h2 />
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      maxLength={20}
+      onChange={[Function]}
+      placeholder="Buscar GIF's"
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": "10px",
+          "marginLeft": "5px",
+          "paddingBottom": "2px",
+        }
+      }
+    >
+      Agregar
+    </button>
+  </form>
+</Fragment>
+`;
