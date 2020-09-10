@@ -5,13 +5,13 @@ import { GifGrid } from './components/GifGrid'
 
 export const GifExpertApp = () =>{
     // en vez de solo tener un arreglo primero y luego declarar el state={verduras,hierbas,frutas etc..} con lo sig: queda declarado el state y la info en un solo paso
-    const [categorias, setCategorias] = useState(['Morty Rick'])
+    const [categorias, setCategorias] = useState([])
 
     const ultimaCategoria = categorias[0]
 
     return(
         <>
-            <h2>Agregar nueva categoria:</h2>
+            <h2>GIF's App:</h2>
             <hr/>
             {/* obtengo con props los items para que se rendericen */}
             <AddCategory categorias={categorias} setCategorias={ setCategorias } />

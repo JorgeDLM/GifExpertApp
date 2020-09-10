@@ -4,3 +4,38 @@ APUNTES:
 helpers
 los helpers nos ayudan a no tener todas las funciones en un componente, porque visualmente no es estetico. Lo mejor es extraer las funciones 
 -son funciones que hacen un trabajo en especifico
+
+TESTS:
+#bf1 PARA LOS TESTS:
+        instalar Enzyme:
+            https://enzymejs.github.io/enzyme/
+        configurar enzyme-to-json
+            npm install --save-dev enzyme-to-json
+        asi debe quedar el archivo setupTests.js:
+            import {createSerializer} from 'enzyme-to-json';
+            import Enzyme from 'enzyme';
+            import Adapter from 'enzyme-adapter-react-16';
+            Enzyme.configure({ adapter: new Adapter() });
+            expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
+
+#a52 UTILIDADES:
+        shallow
+            enzyme nos da el shallow que nos permite traer componentes 
+            completos: shallow(<Categorias hola="hola" />)
+        wrapper
+            normalmente son las constantes del shallow plan:
+            const wrapper = shallow(<Categorias hola="hola" />)
+        wrapper . toSnapshot() 
+            sirve para asegurarnos de que no cambien nuestro componente, sobre
+            todo en componentes sumamente importantes
+
+
+#f03 AUTOIMPORTACIONES:
+    para que las autoimportaciones no sean constantes y sean imports crear un archivo que se llame jsconfig.json hasta arriba y poner lo siguiente:
+        {
+        "compilerOptions": {
+            "module": "esnext",
+            "target": "es6"
+        },
+        "exclude": ["node_modules"]
+        }

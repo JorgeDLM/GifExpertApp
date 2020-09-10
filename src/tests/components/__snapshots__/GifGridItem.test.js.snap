@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifGridItem debe mostrar el componente correctamente 1`] = `
+<div
+  className="card"
+>
+  <img
+    alt="Rick and Morty"
+    src="https://localhost/algo.jpg"
+    style={Object {}}
+  />
+  <p
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Rick and Morty
+  </p>
+</div>
+`;

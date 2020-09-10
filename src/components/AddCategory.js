@@ -53,7 +53,7 @@ export const AddCategory = ({categorias, setCategorias}) =>{
                 <input 
                     maxLength={20} 
                     type="text" 
-                    placeholder="Agregue un categoria" 
+                    placeholder="Buscar GIF's" 
                     value={convertirMayusculas(inputValue)} 
                     // ya no es necesario porque esta el form onEnter:
                     // onKeyDown={e => (e.keyCode === 13) && agregarCategoria()} 
