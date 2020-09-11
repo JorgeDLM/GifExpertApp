@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en <GifGrid/> Debe de renderizarse el Snapshot correctamente 1`] = `
+<Fragment>
+  <div
+    style={
+      Object {
+        "fontSize": "25px",
+        "fontWeight": "bolder",
+        "marginBottom": "4px",
+        "textAlign": "center",
+      }
+    }
+  >
+    juan
+  </div>
+  <p
+    className="animate__flash"
+  >
+    Cargando...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;

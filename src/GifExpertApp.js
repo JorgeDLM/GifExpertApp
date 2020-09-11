@@ -3,9 +3,10 @@ import React, { useState } from 'react'
 import AddCategory from './components/AddCategory'
 import { GifGrid } from './components/GifGrid'
 
-export const GifExpertApp = () =>{
+export const GifExpertApp = ({defaultCategories = []}) =>{
     // en vez de solo tener un arreglo primero y luego declarar el state={verduras,hierbas,frutas etc..} con lo sig: queda declarado el state y la info en un solo paso
-    const [categorias, setCategorias] = useState([])
+    // const [categorias, setCategorias] = useState([]), otra manera => puede inicializar ahora con defaultProps guardadas por el usuario
+    const [categorias, setCategorias] = useState(defaultCategories)
 
     const ultimaCategoria = categorias[0]
 

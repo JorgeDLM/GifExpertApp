@@ -39,3 +39,9 @@ TESTS:
         },
         "exclude": ["node_modules"]
         }
+
+#c38 PRUEBAS CON HOOKS:
+    Esto se instala para probar hooks:
+    npm install --save-dev @testing-library/react-hooks
+
+para encontrar opciones picar ctrl + barra espaciadora

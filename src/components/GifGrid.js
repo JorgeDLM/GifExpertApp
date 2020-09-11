@@ -1,5 +1,7 @@
 import React from 'react'
 import GifGridItem from './GifGridItem'
+// para pruebas son utiles losproptypes, no sirven para mucho mas, impt tab
+import PropTypes from 'prop-types';
 // import { getGifs } from '../helpers/getGifs'
 import { useFetchGifs } from '../hooks/useFetchGifs'
 
@@ -53,4 +55,8 @@ export const GifGrid = ({categorias, cantidad, ultimaCategoria, pruebas}) => {
                     </div>
             </>
     )
+}
+
+GifGrid.propTypes = {
+    categorias: PropTypes.string.isRequired
 }
