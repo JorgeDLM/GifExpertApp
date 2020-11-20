@@ -28,6 +28,10 @@ TESTS:
         wrapper . toSnapshot() 
             sirve para asegurarnos de que no cambien nuestro componente, sobre
             todo en componentes sumamente importantes
+        toBe
+            comparacion
+        toEqual
+            igualdad, un [] vacio no es igual a otro asi que se usa toEqual
 
 
 #f03 AUTOIMPORTACIONES:
